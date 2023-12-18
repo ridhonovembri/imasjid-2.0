@@ -16,7 +16,6 @@
         v-model:selected="selected"
         :selected-rows-label="getSelectedRow"
       >
-        <!-- to configure header table-->
         <template #header-cell="props">
           <q-th :props="props" class="bg-primary glossy text-white text-h7">
             {{ props.col.label }}
@@ -223,6 +222,7 @@
   
     methods: {
       getSelectedRow() {
+        // alert('selected', this.selected[0].Id)
         this.show_dialog = true;
         this.slides.Id = this.selected[0].Id
       },
@@ -246,6 +246,8 @@
       async deleteRow() {
         // console.log('delete', props.row.Id)
         const id = this.slides.Id;
+
+        // console.log('delete id', id)
   
         // const index = this.rows.indexOf(id);
         await Delete.slides(id).then((res) => {

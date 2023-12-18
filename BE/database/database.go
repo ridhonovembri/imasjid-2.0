@@ -2,35 +2,46 @@ package database
 
 import (
 	"log"
-	"os"
 
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
-	"gorm.io/gorm/logger"
+	"gorm.io/gorm/schema"
 )
 
-type DbInstance struct {
-	Db *gorm.DB
-}
+// type DbInstance struct {
+// 	Db *gorm.DB
+// }
 
-var Database DbInstance
+// var Database DbInstance
+var Database *gorm.DB
 
-func ConnectDb() {
-	db, err := gorm.Open(sqlite.Open("imasjid.db"), &gorm.Config{})
+func ConnectDb() error {
+	var err error
+
+	Database, err = gorm.Open(sqlite.Open("VMasjid.db"), &gorm.Config{
+		NamingStrategy: schema.NamingStrategy{
+			SingularTable: true,
+		},
+		SkipDefaultTransaction: true,
+		PrepareStmt:            true,
+	})
 
 	if err != nil {
-		log.Fatal("Failed to connect to the database! \n", err)
-		os.Exit(2)
+		panic(err)
+		// log.Fatal("Failed to connect to the database! \n", err)
+		// os.Exit(2)
 	}
 
 	log.Println("Connected Successfully to Database")
-	db.Logger = logger.Default.LogMode(logger.Info)
+	// Database.Logger = logger.Default.LogMode(logger.Info)
 
 	// log.Println("Running Migrations")
 	// db.AutoMigrate(&models.User{})
 	// db.AutoMigrate(&models.MasjidInfo{})
+	// db.AutoMigrate(&models.MasjidTest{})
 
-	Database = DbInstance{
-		Db: db,
-	}
+	// Database = DbInstance{
+	// 	Db: db,
+	// }
+	return nil
 }

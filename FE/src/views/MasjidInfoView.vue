@@ -73,8 +73,8 @@ export default {
   },
   methods: {
     async updateMasjidInfo() {
-      console.log("masjidInfo", this.masjidInfo);
-      console.log('this.masjidInfo.id', this.masjidInfo.Id)
+      // console.log("masjidInfo", this.masjidInfo);
+      // console.log('this.masjidInfo.id', this.masjidInfo.Id)
       // Update.masjidInfo();
       await Update.masjidInfo(this.masjidInfo.Id, this.masjidInfo).then((res) => {
 

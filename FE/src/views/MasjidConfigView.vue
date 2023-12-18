@@ -6,7 +6,7 @@
       </q-card-section>
 
       <q-separator />
-      <h7>Setting Hitung Mundur Menuju Adzan</h7>
+      <header>Setting Hitung Mundur Menuju Adzan</header>
       <div class="q-gutter-xs row" style="margin: 10px">
         <q-input
           standout="bg-teal text-white"
@@ -39,7 +39,7 @@
           label="Isya (Menit)"
         />
       </div>
-      <h7 style="margin: 15px">Setting Hitung Mundur Menuju Iqomah</h7>
+      <header>Setting Hitung Mundur Menuju Iqomah</header>
       <div class="q-gutter-xs row" style="margin: 10px">
         <q-input
           standout="bg-teal text-white"
@@ -72,7 +72,7 @@
           label="Isya (Menit)"
         />
       </div>
-      <h7 style="margin: 15px">Setting Hitung Mundur Persiapan Adzan</h7>
+      <header>Setting Hitung Mundur Persiapan Adzan</header>
       <div class="q-gutter-xs row" style="margin: 10px">
         <q-input
           standout="bg-teal text-white"
@@ -81,7 +81,7 @@
           label="Persiapan Adzan (Menit)"
         />
       </div>
-      <h7 style="margin: 15px">Label Sholat</h7>
+      <header>Label Sholat</header>
       <div class="q-gutter-xs row" style="margin: 10px">
         <q-input
           standout="bg-teal text-white"
@@ -114,7 +114,7 @@
           label="Label Isya"
         />
       </div>
-      <h7 style="margin: 15px">Penyesuaian waktu sholat</h7>
+      <header>Penyesuaian waktu sholat</header>
       <div class="q-gutter-xs row" style="margin: 10px">
         <q-input
           standout="bg-teal text-white"
@@ -153,7 +153,7 @@
           label="+/- Isya (Menit)"
         />
       </div>
-      <h7 style="margin: 15px">Koordinat</h7>
+      <header>Koordinat</header>
       <div class="q-gutter-xs row" style="margin: 10px">
         <q-input
           standout="bg-teal text-white"
@@ -166,7 +166,7 @@
           label="Longitude"
         />
       </div>
-      <u><h7 style="margin: 15px">Teks Persiapan Adzan dan Iqomah</h7></u>
+      <u><header>Teks Persiapan Adzan dan Iqomah</header></u>
       <div class="q-gutter-xs row" style="margin: 10px">
         <q-input
           standout="bg-teal text-white"
@@ -179,7 +179,7 @@
           label="Sebelum Iqomah"
         />
       </div>
-      <u><h7 style="margin: 15px">Interval</h7></u>
+      <u><header>Interval</header></u>
       <div class="q-gutter-xs row" style="margin: 10px">
         <q-input
           standout="bg-teal text-white"
@@ -194,7 +194,7 @@
           label="Interval Hadist (Milidetik)"
         />
       </div>
-      <u><h7 style="margin: 15px">Teks dan Background Image Sedang Sholat</h7></u>
+      <u><header>Teks dan Background Image Sedang Sholat</header></u>
       <div class="q-gutter-xs row" style="margin: 10px">
         <q-input
           standout="bg-teal text-white"
@@ -228,7 +228,7 @@
           label="Durasi Sholat(Menit)"
         />
       </div>
-      <u><h7 style="margin: 15px">Ukuran Font</h7></u>
+      <u><header>Ukuran Font</header></u>
       <div class="q-gutter-xs row" style="margin: 10px">
         <q-input
           standout="bg-teal text-white"
@@ -283,7 +283,7 @@
         color="white"
         text-color="black"
         label="Simpan"
-        style="margin: 15px"
+      
         @click="updatemasjidConfig"
       />
     </q-card>
@@ -351,8 +351,8 @@ export default {
   },
   methods: {
     async updatemasjidConfig() {
-      console.log("masjidConfig", this.masjidConfig);
-      console.log("this.masjidConfig.id", this.masjidConfig.Id);
+      // console.log("masjidConfig", this.masjidConfig);
+      // console.log("this.masjidConfig.id", this.masjidConfig.Id);
       // Update.masjidConfig();
       await Update.masjidConfig(this.masjidConfig.Id, this.masjidConfig).then(
         (res) => {
@@ -386,7 +386,7 @@ export default {
   /* max-width: 250px */
 }
 
-h7{
+header{
   margin:15px;
   text-decoration: underline;
   font-weight: bold;

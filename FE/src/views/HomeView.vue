@@ -273,6 +273,7 @@ export default {
     
     async getMasjidInfo() {
       this.masjid = (await Get.masjidInfo()).data;
+      // console.log('this.masjid', this.masjid)
     },
 
     async getSlides() {
@@ -324,7 +325,7 @@ export default {
       let today = new Date();
 
       //testing
-      // let currentTime = moment(today).subtract(992, "m");
+      // let currentTime = moment(today).subtract(150, "m");
     
 
       //actual

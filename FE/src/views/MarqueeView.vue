@@ -184,6 +184,7 @@
       getSelectedRow() {
         this.show_dialog = true;
         this.marquee.Id = this.selected[0].Id
+        // alert('selected', this.marquee.Id)
       },
   
       async getRow() {
